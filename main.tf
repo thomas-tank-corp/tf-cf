@@ -44,24 +44,24 @@ resource "aws_cloudformation_stack" "network" {
       "Description" : "Enter the CIDR block for the VPC. Default is 10.0.0.0/16."
     }
   },
-  "Resources" : {
-    "myVpc": {
-      "Type" : "AWS::EC2::VPC",
-      "Properties" : {
-        "CidrBlock" : { "Ref" : "VPCCidr" },
-        "Tags" : [
-          {"Key": "Name", "Value": "Primary_CF_VPC"}
-        ]
-      }
-    }
-    "myBucket" : {
-	       "Type" : "AWS::S3::Bucket",
-	       "Properties" : {
-		          "BucketName" : "bad-idea-bucket"
-	
+	"Resources" : {
+	  "myVpc": {
+		"Type" : "AWS::EC2::VPC",
+		"Properties" : {
+		  "CidrBlock" : { "Ref" : "VPCCidr" },
+		  "Tags" : [
+			{"Key": "Name", "Value": "Primary_CF_VPC"}
+		  ]
+		}
 	  }
+	  "myBucket" : {
+	        "Type" : "AWS::S3::Bucket",
+		 "Properties" : {
+			"BucketName" : "bad-idea-bucket"
+	  
+		      }  
+	       }
+	   }
   }
+  STACK
   }
-}
-STACK
-}
