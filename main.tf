@@ -54,14 +54,7 @@ resource "aws_cloudformation_stack" "network" {
 		  ]
 		}
 	  }
-	  "myBucket" : {
-	        "Type" : "AWS::S3::Bucket",
-		 "Properties" : {
-			"BucketName" : "bad-idea-bucket"
-	  
-		      }  
-	       }
-	   }
+	
   }
   STACK
   }
